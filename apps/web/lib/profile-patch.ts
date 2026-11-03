@@ -36,6 +36,7 @@ export function patchProfile(
               experience: profile.experience ?? d.experience,
               bio: profile.bio ?? d.bio,
               email: profile.email ?? d.email,
+              specializationId: profile.specializationId ?? d.specializationId,
             }
           : d,
       ),

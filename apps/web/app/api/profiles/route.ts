@@ -104,6 +104,26 @@ export async function POST(request: NextRequest) {
     const requestId = z.uuid().parse(form.get('requestId'));
     const fields = profileFields.parse(JSON.parse(String(form.get('fields'))));
     const action = z.enum(['keep', 'replace', 'remove']).parse(form.get('photo'));
+    if (fields.specializationId !== undefined) {
+      if (target.kind !== 'doctor' || !context.membership.roles.includes('admin'))
+        throw new ClinicalError('Only authorized Admins may change Doctor departments.', 403);
+      const permission = await client.rpc('get_clinic_profile', {
+        p_organization_id: target.organizationId,
+        p_kind: target.kind,
+        p_target_id: target.id,
+      });
+      profileDatabaseError(permission.error);
+      const current = permission.data as unknown as {
+        canEdit?: boolean;
+        canEditDepartment?: boolean;
+      };
+      if (!current?.canEdit)
+        throw new ClinicalError('This Doctor department change is not authorized.', 403);
+      if (current.canEditDepartment === undefined)
+        throw new ClinicalError('Department editing is awaiting clinic activation.', 503);
+      if (!current.canEditDepartment)
+        throw new ClinicalError('This Doctor department change is not authorized.', 403);
+    }
     const key = user.id;
     if (active.has(key)) throw new ClinicalError('This profile is already being saved.', 409);
     lock = key;

@@ -1,0 +1,25 @@
+{
+  "target": "jyigxpjvygvtvcypujel",
+  "status": "deployed-verified",
+  "candidate": "20261103053030_clinic_doctor_department_profile.sql",
+  "sha256": "146ac81de718fa729c1df09df7c06697b33724c4f9212d78d7ec11c1ed40015b",
+  "remoteApplied": true,
+  "remoteApplyApproved": true,
+  "existingMigrationCount": 22,
+  "changedFunctions": [
+    "clinic_private.read_profile(uuid,text,uuid)",
+    "clinic_private.save_profile(uuid,text,uuid,jsonb,text,uuid)"
+  ],
+  "newTables": [],
+  "rlsChanges": 0,
+  "newGrants": [],
+  "seeds": [],
+  "roles": [],
+  "baselineSourceMd5": {
+    "read_profile": "f88468133a59962273b6fa2f703ed9ad",
+    "save_profile": "a1eb012d5093c6465b2861077dae01ba"
+  },
+  "rollback": "Abort transaction on failure; after successful deployment use reviewed fix-forward or restore exact previous function definitions. Never reset clinical data.",
+  "appliedVersion": "20261103053030",
+  "appliedMigrationCount": 23
+}

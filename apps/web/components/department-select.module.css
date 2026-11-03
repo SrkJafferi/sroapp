@@ -1,0 +1,86 @@
+.field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.field > label {
+  font-weight: 550;
+}
+.control {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.control input {
+  width: 100%;
+  padding-left: 37px;
+  padding-right: 36px;
+}
+.control > svg {
+  position: absolute;
+  color: #6b5896;
+  pointer-events: none;
+}
+.control > svg:first-child {
+  left: 12px;
+}
+.control > svg:nth-of-type(2) {
+  right: 12px;
+}
+.field small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  border: 1px solid #dfd7ee;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 12px 32px #3520611f;
+  overflow: hidden;
+}
+.menu ul {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+  max-height: 230px;
+  overflow-y: auto;
+}
+.menu li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.menu li[data-active='true'] {
+  background: #f0eafa;
+  color: #39206f;
+}
+.menu li[aria-selected='true'] {
+  font-weight: 600;
+}
+.menu li svg {
+  flex-shrink: 0;
+  color: #168450;
+}
+.menu p {
+  margin: 0;
+  padding: 14px;
+  color: #655577;
+}
+@media (forced-colors: active) {
+  .menu li[data-active='true'] {
+    outline: 2px solid Highlight;
+    outline-offset: -2px;
+  }
+}

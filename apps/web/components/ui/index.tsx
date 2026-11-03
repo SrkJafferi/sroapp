@@ -123,12 +123,14 @@ export function Modal({
   children,
   onClose,
   wide = false,
+  onEscapeKeyDown,
 }: {
   title: string;
   description?: string;
   children: React.ReactNode;
   onClose: () => void;
   wide?: boolean;
+  onEscapeKeyDown?: (event: KeyboardEvent) => void;
 }) {
   return (
     <Dialog.Root
@@ -139,7 +141,10 @@ export function Modal({
     >
       <Dialog.Portal>
         <Dialog.Overlay className="dialog-overlay" />
-        <Dialog.Content className={`dialog-content ${wide ? 'dialog-wide' : ''}`}>
+        <Dialog.Content
+          className={`dialog-content ${wide ? 'dialog-wide' : ''}`}
+          onEscapeKeyDown={onEscapeKeyDown}
+        >
           <div className="dialog-heading">
             <div>
               <Dialog.Title>{title}</Dialog.Title>

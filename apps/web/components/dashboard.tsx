@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { DoctorDashboard } from './doctor-dashboard';
+import { AdminDashboard } from './admin-dashboard';
 import { WorkspaceLink } from './workspace-route';
 import {
   ArrowRight,
@@ -148,6 +149,15 @@ export function AppointmentTable({
 }
 export function Dashboard(props: { onAppointment: (id: string) => void; onBook: () => void }) {
   const { role } = useClinic();
+  if (role === 'admin')
+    return (
+      <AdminDashboard
+        {...props}
+        renderAppointments={(items) => (
+          <AppointmentTable appointments={items} onAppointment={props.onAppointment} compact />
+        )}
+      />
+    );
   return role === 'doctor' ? <DoctorDashboard {...props} /> : <LegacyDashboard {...props} />;
 }
 function LegacyDashboard({

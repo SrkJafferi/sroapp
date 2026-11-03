@@ -35,6 +35,7 @@ import { Avatar, Button, Modal, SearchBox } from './ui';
 import { AppointmentDialog, BookingDialog, ConsultationDialog } from './appointment-flows';
 import { workspaceHref, workspaceNav } from './workspace-nav';
 import { useWorkspaceNavigate, useWorkspaceRoute, WorkspaceLink } from './workspace-route';
+import adminStyles from './admin-dashboard.module.css';
 
 type WorkspaceUi = {
   openBooking: (options?: { doctorId?: string; patientId?: string }) => void;
@@ -242,7 +243,9 @@ export function ClinicShell({
   }, [clinical, identity, actor]);
   return (
     <WorkspaceUiContext.Provider value={ui}>
-      <div className={`clinic-shell${collapsed ? ' sidebar-collapsed' : ''}`}>
+      <div
+        className={`clinic-shell${collapsed ? ' sidebar-collapsed' : ''}${role === 'admin' ? ` ${adminStyles.shell}${section === 'dashboard' ? ` ${adminStyles.dashboardShell}` : ''}` : ''}`}
+      >
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>
@@ -408,6 +411,9 @@ export function ClinicShell({
                       </option>
                     ))}
                   </select>
+                  {role === 'admin' && (
+                    <ChevronDown className="branch-select-chevron" size={16} aria-hidden="true" />
+                  )}
                 </label>
               ) : (
                 <span className="branch-select branch-select-pending">

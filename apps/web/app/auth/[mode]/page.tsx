@@ -7,8 +7,19 @@ import { AuthScreen } from '@/components/auth-screen';
 import { loadIdentity } from '@/lib/auth/session';
 import { homeFor } from '@/lib/auth/policy';
 import { DoctorOnboarding } from '@/components/doctor-onboarding';
-export default async function Page({ params }: { params: Promise<{ mode: string }> }) {
+import { WelcomeExperience } from '@/components/welcome-experience';
+export default async function Page({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ mode: string }>;
+  searchParams: Promise<{ explore?: string }>;
+}) {
   const { mode } = await params;
+  if (mode === 'welcome') {
+    const query = await searchParams;
+    return <WelcomeExperience showDiscoveryNotice={query.explore === 'clinics'} />;
+  }
   if (mode === 'patient-pilot') {
     if (!pilotExecutionEnabled()) notFound();
     return <AuthScreen mode="login" patientIdLogin />;

@@ -10,6 +10,7 @@ export const profileFields = z
     name: z.string().trim().min(2).max(120),
     gender: z.enum(['Male', 'Female', 'Other', 'Not recorded']).optional(),
     qualifications: z.string().trim().max(300).optional(),
+    specializationId: z.uuid().optional(),
     experience: z.coerce.number().int().min(0).max(80).optional(),
     bio: z.string().trim().max(4000).optional(),
     email: z.union([z.email().max(254), z.literal('')]).optional(),
@@ -35,6 +36,7 @@ export type EditableProfile = ProfileTarget &
     ageSource?: 'recorded' | null;
     ageRecordedOn?: string | null;
     canEditBloodGroup?: boolean;
+    canEditDepartment?: boolean;
   };
 export type ProfileAsset = ProfileTarget & { avatarId: string; userId: string | null };
 export const PROFILE_CHANGED = 'sro:profile-changed';

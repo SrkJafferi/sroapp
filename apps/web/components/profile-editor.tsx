@@ -14,6 +14,7 @@ import {
 import { clearClinicalCache } from '@/lib/clinical-cache';
 import { ACCOUNT_PROFILE_SECTION_ID } from '@/lib/account-sections';
 import { displayName } from '@/lib/clinical-clock';
+import { DepartmentSelect } from './department-select';
 import type { Doctor } from '@sro/types';
 import {
   ageYearsLabel,
@@ -328,6 +329,14 @@ function ProfileEditor({
   const patientRecord =
     profile.kind === 'patient' ? state.patients.find((p) => p.id === profile.id) : undefined;
   const currentHistory = patientRecord?.history;
+  const currentDepartment =
+    profile.specializationId ?? state.doctors.find((d) => d.id === profile.id)?.specializationId;
+  const [departmentId, setDepartmentId] = useState(currentDepartment ?? '');
+  const canChooseDepartment =
+    profile.kind === 'doctor' &&
+    actor.role === 'admin' &&
+    profile.canEdit &&
+    profile.canEditDepartment !== false;
   const canEditBloodGroup =
     profile.kind === 'patient' &&
     ['admin', 'doctor'].includes(actor.role) &&
@@ -443,6 +452,10 @@ function ProfileEditor({
         if (!lock.current) onClose();
       }}
       wide
+      onEscapeKeyDown={(event) => {
+        if (document.activeElement?.matches('[role="combobox"][aria-expanded="true"]'))
+          event.preventDefault();
+      }}
     >
       <form
         className="form-stack"
@@ -461,6 +474,19 @@ function ProfileEditor({
             return;
           }
           const fields = { ...parsed.data };
+          if (canChooseDepartment && departmentId !== currentDepartment) {
+            if (!state.specializations.some((d) => d.id === departmentId)) {
+              setError('Select an existing clinic department.');
+              return;
+            }
+            if (profile.canEditDepartment !== true) {
+              setError(
+                'Department editing is awaiting clinic activation. Other profile fields can still be saved.',
+              );
+              return;
+            }
+            fields.specializationId = departmentId;
+          }
           if (
             profile.canEditBloodGroup === true &&
             canEditBloodGroup &&
@@ -677,6 +703,25 @@ function ProfileEditor({
             )}
             {profile.kind === 'doctor' && (
               <>
+                {canChooseDepartment ? (
+                  <DepartmentSelect
+                    departments={state.specializations}
+                    value={departmentId}
+                    onChange={setDepartmentId}
+                    disabled={busy}
+                  />
+                ) : (
+                  <Field label="Department">
+                    <input
+                      readOnly
+                      value={
+                        state.specializations.find((d) => d.id === currentDepartment)?.name ??
+                        'Not recorded'
+                      }
+                    />
+                    <small className="muted">Managed by authorized clinic Administrators.</small>
+                  </Field>
+                )}
                 {field('qualifications', 'Qualifications', 'text', 300)}
                 {field('experience', 'Professional experience (years)', 'number')}
                 {field('email', 'Public contact email', 'email', 254)}
@@ -688,9 +733,6 @@ function ProfileEditor({
                     onChange={(e) => setValues((v) => ({ ...v, bio: e.target.value }))}
                   />
                 </Field>
-                <p className="small muted">
-                  Specialization is managed through clinic administration.
-                </p>
               </>
             )}
           </div>
