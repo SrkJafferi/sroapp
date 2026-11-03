@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@sro/permissions": "workspace:*",
+    "@sro/types": "workspace:*",
+    "@sro/clinic-core": "workspace:*",
+    "@sro/validation": "workspace:*"
+  },
+  "private": true,
+  "version": "0.1.0",
+  "name": "@sro/data-access",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./public-discovery": "./src/public-discovery.ts"
+  }
+}

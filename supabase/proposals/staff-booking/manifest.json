@@ -1,0 +1,32 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "candidate": "20261027105809_clinic_staff_booking_profiles.sql",
+  "sha256": "29cce56dca038683716570fc6eef9d0844f3b0b6f6136798c5e82f9a32c2c8b8",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202",
+    "20261026192535",
+    "20261026195847",
+    "20261026224947",
+    "20261027093051"
+  ],
+  "replacedPrivateFunctions": [
+    "read_profile",
+    "save_profile",
+    "book_appointment"
+  ],
+  "newTables": [],
+  "newPublicRpcs": [],
+  "rlsPolicyChanges": 0,
+  "dataBackfill": false,
+  "oldPendingAppointmentsChanged": false,
+  "seedIncluded": false,
+  "rolesFileIncluded": false,
+  "remoteVersion": "20261027105809",
+  "deployedAt": "2026-10-27T11:21:14.714Z"
+}

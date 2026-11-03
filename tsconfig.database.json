@@ -1,0 +1,9 @@
+{
+  "extends": "./packages/config/tsconfig.json",
+  "compilerOptions": { "types": ["node"] },
+  "include": [
+    "tests/database/**/*.ts",
+    "scripts/generate-database-types.ts",
+    "packages/types/src/**/*.ts"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "sro-clinic",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:web": "pnpm --filter @sro/web dev",
+    "dev:mobile": "pnpm --filter @sro/mobile dev",
+    "android": "pnpm --filter @sro/mobile android",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "build": "turbo run build",
+    "check:core": "tsx --test tests/clinic.test.ts",
+    "check:ui": "playwright test",
+    "check:expo": "pnpm --filter @sro/mobile exec expo install --check",
+    "export:android": "pnpm --filter @sro/mobile export:android",
+    "check:mobile:ui": "playwright test --config playwright.mobile.config.ts",
+    "check:expo-doctor": "pnpm --filter @sro/mobile exec expo-doctor",
+    "db:types": "node --import tsx scripts/generate-database-types.ts",
+    "check:db": "node --import tsx --test tests/database/security.test.ts tests/database/readiness.test.ts && node --import tsx scripts/generate-database-types.ts --check",
+    "typecheck:db": "tsc --noEmit -p tsconfig.database.json",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.0",
+    "@electric-sql/pglite": "0.4.6",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^22.19.0",
+    "eslint": "^9.39.1",
+    "prettier": "3.6.2",
+    "tsx": "^4.20.6",
+    "turbo": "^2.8.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.0"
+  }
+}

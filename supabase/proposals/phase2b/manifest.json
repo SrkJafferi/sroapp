@@ -1,0 +1,16 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "deploymentVerifiedAt": "2026-10-26T12:13:47.816582Z",
+  "candidate": "20261026111934_clinic_auth_onboarding.sql",
+  "sha256": "21927014318436ef6335d9cd8b4f6170fb07b85b024da104cf0cf6dcc2eec016",
+  "dependsOnVersions": ["20261026024332", "20261026024335", "20261026024338"],
+  "newPrivateTables": 3,
+  "newServiceOnlyPublicRpcs": 8,
+  "newPrivateHelpers": 3,
+  "replacedHelpers": ["clinic_private.is_member(uuid)"],
+  "restrictiveMfaPolicies": 34,
+  "authUsersCreatedByMigration": 0,
+  "bootstrapIsSeparateOperatorCommand": true
+}

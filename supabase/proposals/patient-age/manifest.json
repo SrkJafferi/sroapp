@@ -1,0 +1,69 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "candidate": "20261026224947_clinic_patient_age.sql",
+  "sha256": "7e9091c2657b33acaa99009dab0186c9745e7769505ba3bb5c7fcac89bf52aca",
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202",
+    "20261026192535",
+    "20261026195847"
+  ],
+  "newColumns": [
+    "public.patients.age_years",
+    "public.patients.age_recorded_on"
+  ],
+  "nullableChanged": [
+    "public.patients.date_of_birth (NOT NULL -> nullable)"
+  ],
+  "newConstraints": [
+    "patients_age_years_range",
+    "patients_age_recorded_pair",
+    "patients_age_recorded_on_range",
+    "patients_age_known"
+  ],
+  "replacedFunctions": [
+    "clinic_private.read_profile(uuid,text,uuid)",
+    "clinic_private.save_profile(uuid,text,uuid,jsonb,text,uuid)",
+    "public.phase2b_patient(uuid,jsonb)"
+  ],
+  "newPublicRpcs": 0,
+  "changedExistingPolicies": 0,
+  "changedExistingMigrations": 0,
+  "existingClinicalRecordsModified": false,
+  "existingBirthDatesModified": false,
+  "backfill": "None. Amina Noor keeps 1994-04-12; age-only records store age_years plus age_recorded_on.",
+  "seedIncluded": false,
+  "rolesFileIncluded": false,
+  "medicalDocumentProposalIncluded": false,
+  "baselineFingerprintVerified": true,
+  "hostedBaseline": {
+    "patientCount": 1,
+    "patientCode": "SRO0001",
+    "dateOfBirth": "1994-04-12",
+    "derivedAgeOn2026_10_26": 32,
+    "bloodGroup": null,
+    "clinicalCounts": {
+      "authUsers": 3,
+      "encounters": 2,
+      "appointments": 5,
+      "prescriptions": 2,
+      "medicalHistory": 1,
+      "prescriptionItems": 2
+    }
+  },
+  "pendingUntilApproval": [],
+  "remoteAppliedVersion": "20261026224947",
+  "remoteAppliedAt": "2026-10-27T10:10:44.713Z",
+  "postDeploymentSecurityCheckedAt": "2026-10-27T10:10:44.713Z",
+  "deployedBehavior": {
+    "independentAge": true,
+    "existingDatesPreserved": true,
+    "staffWalkInMigration": "20261027093051",
+    "portalVerificationPreserved": true
+  }
+}

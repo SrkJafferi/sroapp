@@ -1,0 +1,29 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "candidate": "20261027170222_clinic_department_edit.sql",
+  "sha256": "7afafe7b2fedcd144dcd84ca105c5cff0ee94bd7b2deff52d1e23a37ede8dd92",
+  "remoteApplyApproved": false,
+  "remoteApplied": false,
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202",
+    "20261026192535",
+    "20261026195847",
+    "20261026224947",
+    "20261027093051",
+    "20261027105809",
+    "20261027155325",
+    "20261027164031"
+  ],
+  "changedFunctions": [
+    "clinic_private.manage_clinic(uuid,text,jsonb)"
+  ],
+  "newTables": [],
+  "newGrants": [],
+  "rlsChanges": 0,
+  "seeds": [],
+  "roles": []
+}

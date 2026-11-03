@@ -1,0 +1,43 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "candidate": "20261028131406_clinic_incomplete_onboarding_recovery.sql",
+  "sha256": "7f2d690398555be2c1d6c51c972e581018ed65bd43d1a1bab04bdd82e2bf0119",
+  "remoteApplyApproved": false,
+  "remoteApplied": false,
+  "reason": "prepare() must report database-proven eligibility for a legacy unverified app-created Auth identity so the server route can confirm/set its password without a second verification email.",
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202",
+    "20261026192535",
+    "20261026195847",
+    "20261026224947",
+    "20261027093051",
+    "20261027105809",
+    "20261027155325",
+    "20261027164031",
+    "20261027170222",
+    "20261027210515",
+    "20261028103401",
+    "20261028120915"
+  ],
+  "privateTables": [],
+  "publicColumns": [],
+  "newServiceOnlyFunctions": [],
+  "replacedFunctions": [
+    "phase2b_onboarding"
+  ],
+  "authConfigurationChanges": 0,
+  "seeds": [],
+  "roles": [],
+  "controls": [
+    "database never mutates auth.users",
+    "verified or previously signed-in identities are never eligible",
+    "any profile/doctor/role/membership/branch membership or verified MFA denies",
+    "eligibility requires the sole email identity marked demo_only inside a delivered historical invitation window with matching name and unconsumed/after-creation secret",
+    "current invitation hash, sent status, expiry and inviter authority are revalidated under lock",
+    "service_role-only EXECUTE with empty search_path"
+  ]
+}

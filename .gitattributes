@@ -1,0 +1,11 @@
+* text=auto
+
+# Approved migration hashes refer to exact bytes. Never normalize SQL on checkout.
+*.sql -text
+
+*.png binary
+*.avif binary
+*.jpg binary
+*.jpeg binary
+*.ttf binary
+*.woff2 binary

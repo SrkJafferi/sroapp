@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@sro/validation": "workspace:*",
+    "@sro/types": "workspace:*",
+    "@sro/permissions": "workspace:*"
+  },
+  "private": true,
+  "version": "0.1.0",
+  "name": "@sro/clinic-core",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "types": "./src/index.ts"
+}

@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@sro/types": "workspace:*"
+  },
+  "private": true,
+  "version": "0.1.0",
+  "name": "@sro/permissions",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "types": "./src/index.ts"
+}

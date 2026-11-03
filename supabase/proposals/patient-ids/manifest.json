@@ -1,0 +1,50 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "remoteApprovedSha256": "14c303ad55ba5f54c55aa2590b8fb82cb2a40b4ed08d1c693f114e056126d834",
+  "remoteAppliedVersion": "20261026195847",
+  "remoteAppliedAt": "2026-10-26",
+  "remoteVerifiedAt": "2026-10-26T21:37:28.226Z",
+  "candidate": "20261026195847_clinic_patient_numbers.sql",
+  "sha256": "14c303ad55ba5f54c55aa2590b8fb82cb2a40b4ed08d1c693f114e056126d834",
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202",
+    "20261026192535"
+  ],
+  "newColumns": [
+    "public.patients.patient_number",
+    "public.patients.patient_code"
+  ],
+  "newPrivateTables": [
+    "clinic_private.patient_number_counter"
+  ],
+  "newTriggers": [
+    "patient_number_allocate",
+    "patient_number_immutable"
+  ],
+  "newPrivateFunctions": [
+    "clinic_private.patient_number_guard()"
+  ],
+  "newPublicRpcs": 0,
+  "changedExistingPolicies": 0,
+  "changedExistingMigrations": 0,
+  "existingClinicalRecordsModified": false,
+  "backfill": "Pinned Amina Noor baseline receives SRO0001; registration counter starts at 1",
+  "seedIncluded": false,
+  "rolesFileIncluded": false,
+  "medicalDocumentProposalIncluded": false,
+  "hostedVerification": {
+    "browserChecks": 30,
+    "restSecurityChecks": 17,
+    "localDatabaseAndLabelTests": 19,
+    "allocatedNextNumber": "SRO0002",
+    "allocationRolledBack": true,
+    "counterAfterVerification": 1,
+    "clinicalFingerprintUnchanged": true
+  }
+}

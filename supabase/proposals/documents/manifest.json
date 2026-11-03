@@ -1,0 +1,30 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "remoteApplyApproved": false,
+  "remoteApplied": false,
+  "candidate": "20261026184729_clinic_medical_document_storage.sql",
+  "sha256": "17378d43fd298a58eb5f85d7b4b62312163d205716245d44878918da730aa835",
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202"
+  ],
+  "privateBucket": "clinic-medical-documents",
+  "public": false,
+  "maxBytes": 10485760,
+  "allowedMimeTypes": ["application/pdf", "image/jpeg", "image/png"],
+  "newPrivateTables": ["clinic_private.document_uploads"],
+  "newStoragePolicies": 8,
+  "changedExistingClinicalPolicies": 0,
+  "authenticatedInvokerRpcs": [
+    "begin_medical_document_upload",
+    "complete_medical_document_upload",
+    "abandon_medical_document_upload"
+  ],
+  "serviceOnlyInvokerRpcs": ["attest_medical_document_upload"],
+  "serviceRoleClinicalTableQueries": false,
+  "seedIncluded": false,
+  "rolesFileIncluded": false
+}

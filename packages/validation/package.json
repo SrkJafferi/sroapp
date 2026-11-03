@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "private": true,
+  "version": "0.1.0",
+  "name": "@sro/validation",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "types": "./src/index.ts"
+}

@@ -1,0 +1,57 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "candidate": "20261101090000_clinic_patient_walkin_pilot.sql",
+  "sha256": "02c108fa99bb4cfd731cace72604484837bdcd76b05125b920c686093e514699",
+  "remoteApplyApproved": false,
+  "remoteApplied": false,
+  "dependsOnAppliedVersions": 19,
+  "newPrivateObjects": [
+    "clinic_private.patient_pilot_authorizations",
+    "clinic_private.patient_pilot_doctor_allowed",
+    "clinic_private.patient_pilot_normalize",
+    "clinic_private.patient_pilot_hash"
+  ],
+  "newServiceOnlyFunctions": [
+    "patient_pilot_setup",
+    "patient_pilot_status",
+    "patient_pilot_begin",
+    "patient_pilot_bind",
+    "patient_pilot_authorize_provision",
+    "patient_pilot_mark_provisioned",
+    "patient_pilot_authorize_handover",
+    "patient_pilot_complete",
+    "patient_pilot_quarantine"
+  ],
+  "seeds": [],
+  "createsPatientOrAuth": false,
+  "dryRun": {
+    "target": "jyigxpjvygvtvcypujel",
+    "onlyCandidate": true,
+    "passed": true
+  },
+  "pilotIsolation": {
+    "organizationId": "88645fbe-34da-48aa-a509-c24441b7cf72",
+    "branchId": "5680d806-8a14-48d3-a0ac-d1cd12eddff3",
+    "doctorUserId": "5c81354a-50df-4824-bf19-f80acf650c52",
+    "doctor": "Dr. Nida Aftab",
+    "requestIssuedBySetup": true,
+    "oneRow": true,
+    "patientBoundAfterRegistration": true,
+    "maxPatients": 1,
+    "maxAuthIdentities": 1,
+    "maxHandover": 1,
+    "maxFirstChange": 1
+  },
+  "nameConflict": {
+    "proposed": "Ayesha Khan",
+    "existingDoctorProfile": "ce213c55-9271-4133-a71d-511c35b76bcb",
+    "existingDoctor": "Dr. Ayesha Khan",
+    "resolution": "proposed alternate Ayesha Noor; explicit approval required"
+  },
+  "limitations": [
+    "Protected SQL not applied",
+    "Live one-patient activation not executed",
+    "Doctor pilot route not run against protected Auth/PostgreSQL",
+    "Server operation Needs Review read path requires review"
+  ]
+}

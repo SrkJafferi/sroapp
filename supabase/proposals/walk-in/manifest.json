@@ -1,0 +1,42 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "candidate": "20261027093051_clinic_walk_in_registration.sql",
+  "sha256": "13f270fae2c4ab5306cf7cdcacf8a12570ee12e9de72e03ce78bb88829a42d9b",
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202",
+    "20261026192535",
+    "20261026195847",
+    "20261026224947"
+  ],
+  "requiredPendingMigration": {
+    "file": "20261026224947_clinic_patient_age.sql",
+    "sha256": "7e9091c2657b33acaa99009dab0186c9745e7769505ba3bb5c7fcac89bf52aca",
+    "source": "supabase/proposals/patient-age/20261026224947_clinic_patient_age.sql"
+  },
+  "newPrivateTables": [
+    "clinic_private.patient_intakes"
+  ],
+  "newPublicAuthenticatedInvokerRpcs": [
+    "register_walk_in_patient",
+    "staff_patient_intakes"
+  ],
+  "newPatientDemographicPolicy": "patient_intake_demographics",
+  "replacedBookingHelper": "clinic_private.can_book(uuid,uuid,uuid,uuid,public.appointment_source)",
+  "newSignupReviewTrigger": "walk_in_portal_signup_review",
+  "intakeHours": 24,
+  "clinicalAccessPolicyChanges": 0,
+  "authUsersCreated": false,
+  "emailVerificationDisabled": false,
+  "seedIncluded": false,
+  "rolesFileIncluded": false,
+  "medicalDocumentProposalIncluded": false,
+  "remoteAppliedVersion": "20261027093051",
+  "remoteAppliedAt": "2026-10-27T10:10:44.713Z",
+  "postDeploymentSecurityCheckedAt": "2026-10-27T10:10:44.713Z"
+}

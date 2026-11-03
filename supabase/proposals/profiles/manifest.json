@@ -1,0 +1,36 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "remoteApprovedSha256": "b126a5e8bbe345183c9012c0571afab2270b7e0c94aac9bbf94978b2acb23ce6",
+  "remoteAppliedVersion": "20261026192535",
+  "remoteAppliedAt": "2026-10-26",
+  "remoteVerifiedAt": "2026-10-26T20:50:04.869Z",
+  "candidate": "20261026192535_clinic_profiles_avatars.sql",
+  "sha256": "b126a5e8bbe345183c9012c0571afab2270b7e0c94aac9bbf94978b2acb23ce6",
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202"
+  ],
+  "newPrivateBucket": "clinic-profile-avatars",
+  "newPrivateTables": [
+    "clinic_private.profile_avatars"
+  ],
+  "newAuthenticatedInvokerRpcs": [
+    "get_clinic_profile",
+    "save_clinic_profile",
+    "begin_profile_avatar",
+    "discard_profile_avatar",
+    "get_profile_assets",
+    "get_profile_avatar_object"
+  ],
+  "newServiceOnlyInvokerRpc": "attest_profile_avatar",
+  "changedExistingPolicies": 0,
+  "storagePolicies": 8,
+  "seedIncluded": false,
+  "rolesFileIncluded": false,
+  "medicalDocumentProposalIncluded": false
+}

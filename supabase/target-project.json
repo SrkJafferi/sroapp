@@ -1,0 +1,17 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "displayName": "sro@pakiwebhost.com's Project",
+  "organizationId": "grklqcvwrbikvulbjsrp",
+  "region": "ap-south-1",
+  "postgresVersionObserved": "17.11.0.003",
+  "verifiedOn": "2026-10-25",
+  "webAndExpoPublicUrlRefsMatch": true,
+  "publicTablesObserved": 0,
+  "migrationsObserved": 0,
+  "remoteApplyApproved": false,
+  "notes": "Read-only identity verification. This file is not a CLI link or authorization. Obtain explicit human approval of project ref and reviewed migration files before any remote apply.",
+  "inspectionRoleObserved": "postgres",
+  "postgresBypassesRlsObserved": true,
+  "privateSchemaExistsObserved": false,
+  "btreeGistInstalledObserved": false
+}

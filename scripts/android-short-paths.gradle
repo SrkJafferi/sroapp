@@ -1,0 +1,15 @@
+// Keep Ninja object paths below Windows' legacy path limit without changing
+// dependency sources or machine-wide long-path settings.
+gradle.beforeProject { project ->
+    ['com.android.application', 'com.android.library'].each { pluginId ->
+        project.pluginManager.withPlugin(pluginId) {
+            def objectPathLimit = pluginId == 'com.android.application' ? 250 : 240
+            project.extensions.getByName('android').defaultConfig.externalNativeBuild.cmake.arguments.add('-DCMAKE_OBJECT_PATH_MAX=' + objectPathLimit.toString())
+            if (pluginId == 'com.android.application') {
+                // Autolinked codegen adds more directories than library builds.
+                // Keep its generated CMake staging folder at the repository root.
+                project.extensions.getByName('android').externalNativeBuild.cmake.buildStagingDirectory = new File(project.rootDir, '../../../.cxx').canonicalFile
+            }
+        }
+    }
+}

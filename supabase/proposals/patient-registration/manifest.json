@@ -1,0 +1,33 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "candidate": "20261027155325_clinic_patient_registration_timestamp.sql",
+  "sha256": "14883bf03eac11fb7dcd09be7e30d49c140edfa1f3b5a4a1273204d8d27fc6a0",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202",
+    "20261026192535",
+    "20261026195847",
+    "20261026224947",
+    "20261027093051",
+    "20261027105809"
+  ],
+  "newColumn": "public.patients.registered_at",
+  "newPrivateInvokerTrigger": "clinic_private.patient_registration_guard()",
+  "newPublicRpcs": [],
+  "rlsPolicyChanges": 0,
+  "authChanges": false,
+  "missingHistoricalEvidence": "NULL",
+  "historicalSources": [
+    "registration audit event",
+    "staff intake creation timestamp"
+  ],
+  "seedIncluded": false,
+  "rolesFileIncluded": false,
+  "remoteVersion": "20261027155325",
+  "deployedAt": "2026-10-27T16:07:53.129Z"
+}

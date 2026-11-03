@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "SRO Clinic",
+    "slug": "sro-clinic",
+    "version": "0.1.0",
+    "scheme": "sro-clinic",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "org.sropakistan.clinic",
+      "permissions": []
+    },
+    "ios": {
+      "bundleIdentifier": "org.sropakistan.clinic",
+      "supportsTablet": true
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#f9f8ff",
+          "image": "./assets/sro-onboarding-brand.png",
+          "imageWidth": 216,
+          "resizeMode": "contain"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

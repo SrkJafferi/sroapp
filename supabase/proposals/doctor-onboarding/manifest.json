@@ -1,0 +1,35 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "candidate": "20261027210515_clinic_doctor_onboarding_preview.sql",
+  "sha256": "07f3ea437afe41be7182df1cd8058f17b0e38889f50bea02963b24b679279a79",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202",
+    "20261026192535",
+    "20261026195847",
+    "20261026224947",
+    "20261027093051",
+    "20261027105809",
+    "20261027155325",
+    "20261027164031",
+    "20261027170222"
+  ],
+  "newPublicRpc": "phase2b_invitation_preview(uuid,bytea,uuid)",
+  "executeRole": "service_role only",
+  "newTables": [],
+  "rlsChanges": 0,
+  "seeds": [],
+  "roles": [],
+  "observedExistingMigration": {
+    "version": "20261027170222",
+    "sourceMd5": "ca42929ed9900c8ffd12ac838e46ab45",
+    "appliedByThisTask": false
+  },
+  "remoteVersion": "20261027210515",
+  "deployedAt": "2026-10-27T21:15:56.196Z"
+}

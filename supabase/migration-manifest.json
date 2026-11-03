@@ -1,0 +1,19 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "remoteApplyApproved": false,
+  "candidateMigrations": [
+    {
+      "file": "20261026024332_clinic_foundation.sql",
+      "sha256": "ac7ac330febc5ed3ff324677bf42a5bce9e0408e29f737aaa14e21ebe8e2a93e"
+    },
+    {
+      "file": "20261026024335_clinic_access_policies.sql",
+      "sha256": "9f5f66f30540ff7fb5bb531f19979d6e9dc9d62ed6fbb6006be47a9039b4f546"
+    },
+    {
+      "file": "20261026024338_clinic_transaction_commands.sql",
+      "sha256": "e50b0f0f0fbd0e1be545e841e4d207c604cf8ac5c2567fbbda8a2516baa26543"
+    }
+  ],
+  "fictionalFixtureIsRemoteSeed": false
+}

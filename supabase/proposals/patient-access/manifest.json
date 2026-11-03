@@ -1,0 +1,142 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "candidate": "20261029182220_clinic_patient_account_access.sql",
+  "sha256": "fb9382e290899f02528b01a4de334a90de06665f6763dc275a22f738eb2bb79b",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202",
+    "20261026192535",
+    "20261026195847",
+    "20261026224947",
+    "20261027093051",
+    "20261027105809",
+    "20261027155325",
+    "20261027164031",
+    "20261027170222",
+    "20261027210515",
+    "20261028103401",
+    "20261028120915",
+    "20261028131406"
+  ],
+  "historicalFiles": [
+    {
+      "file": "20261026024332_clinic_foundation.sql",
+      "sha256": "ac7ac330febc5ed3ff324677bf42a5bce9e0408e29f737aaa14e21ebe8e2a93e"
+    },
+    {
+      "file": "20261026024335_clinic_access_policies.sql",
+      "sha256": "9f5f66f30540ff7fb5bb531f19979d6e9dc9d62ed6fbb6006be47a9039b4f546"
+    },
+    {
+      "file": "20261026024338_clinic_transaction_commands.sql",
+      "sha256": "e50b0f0f0fbd0e1be545e841e4d207c604cf8ac5c2567fbbda8a2516baa26543"
+    },
+    {
+      "file": "20261026111934_clinic_auth_onboarding.sql",
+      "sha256": "21927014318436ef6335d9cd8b4f6170fb07b85b024da104cf0cf6dcc2eec016"
+    },
+    {
+      "file": "20261026123202_clinic_workspace_commands.sql",
+      "sha256": "b1eb19099fd10a2cb7839a0058ff79276385663e11079fb0fab90b35b1d008af"
+    },
+    {
+      "file": "20261026192535_clinic_profiles_avatars.sql",
+      "sha256": "b126a5e8bbe345183c9012c0571afab2270b7e0c94aac9bbf94978b2acb23ce6"
+    },
+    {
+      "file": "20261026195847_clinic_patient_numbers.sql",
+      "sha256": "14c303ad55ba5f54c55aa2590b8fb82cb2a40b4ed08d1c693f114e056126d834"
+    },
+    {
+      "file": "20261026224947_clinic_patient_age.sql",
+      "sha256": "7e9091c2657b33acaa99009dab0186c9745e7769505ba3bb5c7fcac89bf52aca"
+    },
+    {
+      "file": "20261027093051_clinic_walk_in_registration.sql",
+      "sha256": "13f270fae2c4ab5306cf7cdcacf8a12570ee12e9de72e03ce78bb88829a42d9b"
+    },
+    {
+      "file": "20261027105809_clinic_staff_booking_profiles.sql",
+      "sha256": "29cce56dca038683716570fc6eef9d0844f3b0b6f6136798c5e82f9a32c2c8b8"
+    },
+    {
+      "file": "20261027155325_clinic_patient_registration_timestamp.sql",
+      "sha256": "14883bf03eac11fb7dcd09be7e30d49c140edfa1f3b5a4a1273204d8d27fc6a0"
+    },
+    {
+      "file": "20261027164031_clinic_doctor_verified_email.sql",
+      "sha256": "23acafe1258f286e4e4fc1c4f7f5afff579f47182c74d29ce57b9fb6f8de1388"
+    },
+    {
+      "file": "20261027170222_clinic_department_edit.sql",
+      "sha256": "7afafe7b2fedcd144dcd84ca105c5cff0ee94bd7b2deff52d1e23a37ede8dd92"
+    },
+    {
+      "file": "20261027210515_clinic_doctor_onboarding_preview.sql",
+      "sha256": "07f3ea437afe41be7182df1cd8058f17b0e38889f50bea02963b24b679279a79"
+    },
+    {
+      "file": "20261028103401_clinic_single_email_onboarding.sql",
+      "sha256": "9532afed1e1a79d0ad20870d66c29b42d05d3997987be583d32d80bb4139ca03"
+    },
+    {
+      "file": "20261028120915_clinic_invitation_management.sql",
+      "sha256": "7657ecd8f04f9045edd0897185f3288c16cf15c2515903a32f7ffcde11fc3891"
+    },
+    {
+      "file": "20261028131406_clinic_incomplete_onboarding_recovery.sql",
+      "sha256": "7f2d690398555be2c1d6c51c972e581018ed65bd43d1a1bab04bdd82e2bf0119"
+    }
+  ],
+  "historicalRemoteVersionsReadOnlyVerified": true,
+  "privateTables": [
+    "clinic_private.patient_accounts"
+  ],
+  "replacedFunctions": [
+    "clinic_private.phase2b_assurance",
+    "public.get_clinic_profile"
+  ],
+  "changedConstraints": [
+    "public.profiles.profiles_email_check"
+  ],
+  "newServiceOnlyFunctions": [
+    "public.patient_account_command",
+    "public.patient_login_limit"
+  ],
+  "authConfigurationChanges": 0,
+  "authAccountChangesExecuted": 0,
+  "applicationFeatureEnabled": false,
+  "seeds": [],
+  "roles": [],
+  "controls": [
+    "server-only Auth admin operations",
+    "patient row locking and unique identity/operation constraints",
+    "Doctor initial own recent intake only",
+    "Admin-only reset with in-person verification attestation",
+    "pending-handover and first-change clinical RLS gate",
+    "Auth session_id and session epoch checks",
+    "no password storage; ephemeral one-time handover only",
+    "quarantine incomplete provider writes; no unsafe concurrent retry",
+    "internal reserved .invalid aliases never represent contact ownership",
+    "no mass provisioning; SRO0007/SRO0008 reviewed individually after approval"
+  ],
+  "approvalScope": "migration-only",
+  "featureActivationApproved": false,
+  "patientAuthProvisioningApproved": false,
+  "passwordGenerationOrResetApproved": false,
+  "deployment": {
+    "projectRef": "jyigxpjvygvtvcypujel",
+    "version": "20261029182220",
+    "postgresVersion": "17.11",
+    "appliedOnAsiaKarachi": "2026-10-30",
+    "migrationHistoryCount": 18,
+    "seeds": [],
+    "roles": [],
+    "vaultUpdates": false
+  }
+}

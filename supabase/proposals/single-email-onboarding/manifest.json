@@ -1,0 +1,45 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "candidate": "20261028103401_clinic_single_email_onboarding.sql",
+  "sha256": "9532afed1e1a79d0ad20870d66c29b42d05d3997987be583d32d80bb4139ca03",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202",
+    "20261026192535",
+    "20261026195847",
+    "20261026224947",
+    "20261027093051",
+    "20261027105809",
+    "20261027155325",
+    "20261027164031",
+    "20261027170222",
+    "20261027210515"
+  ],
+  "privateTables": [
+    "clinic_private.doctor_onboarding"
+  ],
+  "publicColumns": [
+    "notifications.doctor_id",
+    "notifications.branch_id"
+  ],
+  "newServiceOnlyFunctions": [
+    "phase2b_onboarding",
+    "phase2b_welcome_delivery"
+  ],
+  "replacedFunctions": [
+    "phase2b_invitation_preview"
+  ],
+  "restrictivePolicies": [
+    "onboarding_notification_scope"
+  ],
+  "authConfigurationChanges": 0,
+  "seeds": [],
+  "roles": [],
+  "remoteApprovedSha256": "9532afed1e1a79d0ad20870d66c29b42d05d3997987be583d32d80bb4139ca03",
+  "deployedAt": "2026-10-28T11:15:36.780Z"
+}

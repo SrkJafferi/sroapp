@@ -1,0 +1,51 @@
+{
+  "name": "@sro/mobile",
+  "private": true,
+  "version": "0.1.0",
+  "main": "expo-router/entry",
+  "scripts": {
+    "dev": "expo start --port 8083",
+    "android": "expo start --android --port 8083",
+    "build:android": "expo run:android",
+    "export:android": "expo export --platform android",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint app src"
+  },
+  "dependencies": {
+    "@expo-google-fonts/inter": "^0.4.2",
+    "@expo/metro-runtime": "~58.0.15",
+    "@sro/clinic-core": "workspace:*",
+    "@sro/data-access": "workspace:*",
+    "@sro/design-tokens": "workspace:*",
+    "@sro/permissions": "workspace:*",
+    "@sro/types": "workspace:*",
+    "@sro/validation": "workspace:*",
+    "expo": "58.0.19",
+    "expo-constants": "~58.0.13",
+    "expo-document-picker": "~58.0.4",
+    "expo-font": "~58.0.10",
+    "expo-linking": "~58.0.14",
+    "expo-router": "58.0.26",
+    "expo-splash-screen": "~58.0.11",
+    "expo-status-bar": "~58.0.4",
+    "expo-system-ui": "~58.0.6",
+    "lucide-react-native": "1.61.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-native": "0.88.0",
+    "react-native-gesture-handler": "~3.3.0",
+    "react-native-reanimated": "4.7.1",
+    "react-native-safe-area-context": "~5.10.1",
+    "react-native-screens": "~4.30.0",
+    "react-native-svg": "15.16.0",
+    "react-native-web": "^0.21.4",
+    "react-native-webview": "14.0.1",
+    "react-native-worklets": "0.13.0",
+    "tailwindcss": "4.3.3",
+    "uniwind": "1.13.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "expo-doctor": "1.21.5"
+  }
+}

@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@import 'uniwind';
+@theme {
+  --color-brand: #372575;
+  --color-care: #078647;
+  --color-canvas: #f6f7fb;
+}

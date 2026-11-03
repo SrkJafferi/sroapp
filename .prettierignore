@@ -1,0 +1,15 @@
+node_modules
+.next
+.expo
+.turbo
+artifacts
+.cxx
+dist
+android
+ios
+pnpm-lock.yaml
+test-results
+playwright-report
+docs/screens
+next-env.d.ts
+uniwind-types.d.ts

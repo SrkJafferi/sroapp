@@ -1,0 +1,20 @@
+{
+  "target": "jyigxpjvygvtvcypujel",
+  "status": "deployed-verified",
+  "migrations": [
+    {
+      "file": "20261102180441_clinic_public_discovery.sql",
+      "sha256": "c1a33decad2ce00fc55225c97ad4c08afa9e80c77201c9e06384b70a50106639"
+    }
+  ],
+  "publication": "Executed approved 20-row selected catalog transaction; no clinical or Auth writes.",
+  "migrationHistoryCount": 22,
+  "publicationPlan": {
+    "file": "publish-selected-catalog.sql",
+    "sha256": "31aaca75ce04669495c2b0e19b07a872c911574975b27716a2a01ae14013c396",
+    "status": "executed-verified",
+    "branches": 2,
+    "doctors": 6,
+    "departments": 12
+  }
+}

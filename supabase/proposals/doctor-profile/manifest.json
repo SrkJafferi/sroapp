@@ -1,0 +1,30 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "candidate": "20261027164031_clinic_doctor_verified_email.sql",
+  "sha256": "23acafe1258f286e4e4fc1c4f7f5afff579f47182c74d29ce57b9fb6f8de1388",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "dependsOnVersions": [
+    "20261026024332",
+    "20261026024335",
+    "20261026024338",
+    "20261026111934",
+    "20261026123202",
+    "20261026192535",
+    "20261026195847",
+    "20261026224947",
+    "20261027093051",
+    "20261027105809",
+    "20261027155325"
+  ],
+  "changedFunctions": [
+    "clinic_private.read_profile(uuid,text,uuid)"
+  ],
+  "newTables": [],
+  "newGrants": [],
+  "rlsChanges": 0,
+  "seeds": [],
+  "roles": [],
+  "remoteVersion": "20261027164031",
+  "deployedAt": "2026-10-27T16:55:02.760Z"
+}

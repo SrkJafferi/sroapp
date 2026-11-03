@@ -1,0 +1,12 @@
+packages:
+  - apps/*
+  - packages/*
+nodeLinker: hoisted
+supportedArchitectures:
+  os: [current]
+  cpu: [current]
+  libc: [current]
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true

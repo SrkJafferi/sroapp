@@ -1,0 +1,37 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "candidate": "20261028120915_clinic_invitation_management.sql",
+  "sha256": "7657ecd8f04f9045edd0897185f3288c16cf15c2515903a32f7ffcde11fc3891",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "dependencies": [
+    "20261026024332_clinic_foundation.sql",
+    "20261026024335_clinic_access_policies.sql",
+    "20261026024338_clinic_transaction_commands.sql",
+    "20261026111934_clinic_auth_onboarding.sql",
+    "20261026123202_clinic_workspace_commands.sql",
+    "20261026192535_clinic_profiles_avatars.sql",
+    "20261026195847_clinic_patient_numbers.sql",
+    "20261026224947_clinic_patient_age.sql",
+    "20261027093051_clinic_walk_in_registration.sql",
+    "20261027105809_clinic_staff_booking_profiles.sql",
+    "20261027155325_clinic_patient_registration_timestamp.sql",
+    "20261027164031_clinic_doctor_verified_email.sql",
+    "20261027170222_clinic_department_edit.sql",
+    "20261027210515_clinic_doctor_onboarding_preview.sql",
+    "20261028103401_clinic_single_email_onboarding.sql"
+  ],
+  "privateTables": [
+    "clinic_private.invitation_dispatch"
+  ],
+  "publicColumns": [
+    "doctor_invitations.sent_at"
+  ],
+  "serviceOnlyFunctions": [
+    "manage_doctor_invitation"
+  ],
+  "replacedFunctions": [
+    "phase2b_invitation_delivery"
+  ],
+  "deployedAt": "2026-10-28T12:19:35.779Z"
+}

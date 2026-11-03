@@ -1,0 +1,72 @@
+node_modules/
+.next/
+.next-onboarding-validation/
+.next-phase3-validation/
+.expo/
+.turbo/
+dist/
+android/
+ios/
+test-results/
+playwright-report/
+artifacts/
+.cxx/
+*.keystore
+*.jks
+*.tsbuildinfo
+.env*
+!.env.example
+
+# Local platform metadata, credentials, exports and operator evidence
+.vercel/
+supabase/.temp/
+.freebuff/
+reference/
+docs/screens/
+docs/*.png
+*.log
+*.dump
+*.dump.*
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.db
+*.pem
+*.p12
+*.pfx
+*.key
+*.apk
+*.aab
+*.hprof
+*.jfr
+
+# Historical live validation reports contain operator/account/clinical test evidence.
+# Keep them locally; publish the general architecture and deployment guidance only.
+docs/*validation*.md
+docs/*deployment*.md
+docs/*readiness*.md
+docs/*live-pilot*.md
+docs/*login-diagnosis*.md
+docs/*final-verification*.md
+docs/*runtime-validation*.md
+docs/clinic-data-recovery.md
+docs/phase2a-security-review.md
+docs/phase4h-android-ui-preview.md
+
+# Current production catalog publication snapshots are operational evidence,
+# not schema migrations, seed data or application build inputs.
+supabase/proposals/public-discovery/selected-catalog.json
+supabase/proposals/public-discovery/publish-selected-catalog.sql
+
+# Operator-specific live email-test tooling and recovery target snapshot
+scripts/phase2c-onboarding.mjs
+scripts/prepare-onboarding-test-fixture.mjs
+scripts/prepare-single-email-live-tests.mjs
+scripts/send-onboarding-invitations.mjs
+scripts/verify-onboarding-concurrency.mjs
+scripts/verify-premium-onboarding.mjs
+supabase/proposals/sro0009-recovery/manifest.json
+tests/database/publication-plan.test.ts
+
+# Generated Next environment/type entry (recreated by Next dev/build)
+**/next-env.d.ts

@@ -1,0 +1,12 @@
+begin read only;
+do $$ begin
+  if not exists(select 1 from storage.buckets where id='clinic-medical-documents' and not public and file_size_limit=10485760 and allowed_mime_types=array['application/pdf','image/jpeg','image/png']) then raise exception 'Private bucket configuration mismatch'; end if;
+  if not exists(select 1 from pg_class where oid='clinic_private.document_uploads'::regclass and relrowsecurity and relforcerowsecurity) then raise exception 'Private intent RLS missing'; end if;
+  if has_table_privilege('authenticated','clinic_private.document_uploads','SELECT,INSERT,UPDATE,DELETE') or has_table_privilege('service_role','clinic_private.document_uploads','SELECT,INSERT,UPDATE,DELETE') then raise exception 'Unexpected direct intent access'; end if;
+  if has_table_privilege('authenticated','public.medical_documents','INSERT,UPDATE,DELETE') then raise exception 'Unexpected direct document writes'; end if;
+  if (select count(*) from pg_proc where pronamespace='public'::regnamespace and proname in ('begin_medical_document_upload','complete_medical_document_upload','abandon_medical_document_upload','attest_medical_document_upload') and not prosecdef and proconfig @> array['search_path=""'] and not has_function_privilege('anon',oid,'execute') and has_function_privilege('authenticated',oid,'execute')=(proname<>'attest_medical_document_upload') and has_function_privilege('service_role',oid,'execute')=(proname='attest_medical_document_upload'))<>4 then raise exception 'RPC grant/search path mismatch'; end if;
+  if (select count(*) from pg_policies where schemaname='storage' and tablename='objects' and policyname in ('clinic_document_insert','clinic_document_insert_guard','clinic_document_read','clinic_document_read_guard','clinic_document_cleanup','clinic_document_cleanup_guard','clinic_document_no_replace','clinic_document_anonymous_deny'))<>8 then raise exception 'Storage policy inventory mismatch'; end if;
+  if not exists(select 1 from pg_policies where schemaname='public' and tablename='medical_documents' and policyname='document_read') or not exists(select 1 from pg_policies where schemaname='public' and tablename='medical_documents' and policyname='phase2b_mfa_required') then raise exception 'Existing clinical document policies missing'; end if;
+end $$;
+select clock_timestamp() as checked_at,'Private document configuration/grants checks passed' as result;
+rollback;

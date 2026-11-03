@@ -1,0 +1,19 @@
+{
+  "projectRef": "jyigxpjvygvtvcypujel",
+  "remoteApplyApproved": true,
+  "remoteApplied": true,
+  "postDeploymentSecurityCheckedAt": "2026-10-26T13:43:49.102978Z",
+  "candidate": "20261026123202_clinic_workspace_commands.sql",
+  "sha256": "b1eb19099fd10a2cb7839a0058ff79276385663e11079fb0fab90b35b1d008af",
+  "dependsOnVersions": ["20261026024332", "20261026024335", "20261026024338", "20261026111934"],
+  "newTables": 0,
+  "changedExistingPolicies": 0,
+  "newAuthenticatedInvokerRpcs": [
+    "manage_clinic",
+    "publish_appointment_slots",
+    "save_patient_history"
+  ],
+  "clinicalServiceRoleAccessAdded": false,
+  "seedIncluded": false,
+  "rolesFileIncluded": false
+}
