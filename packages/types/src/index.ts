@@ -211,7 +211,8 @@ export type NotificationKind =
   | 'leave'
   | 'consultation'
   | 'prescription'
-  | 'invitation';
+  | 'invitation'
+  | 'announcement';
 export interface ClinicNotification {
   id: ID;
   kind: NotificationKind;

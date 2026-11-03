@@ -1,0 +1,205 @@
+.center {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.heading {
+  margin-inline: 24px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #eeeaf7;
+}
+.heading h3 {
+  font-size: 17px;
+  margin: 0 0 6px;
+}
+.heading p {
+  margin: 0;
+  color: #73708b;
+  font-size: 13px;
+}
+.icon {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  border-radius: 15px;
+  background: #eee7fb;
+  color: #57279b;
+  flex: none;
+}
+.admin {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  color: #6d46a2;
+  background: #f5efff;
+  padding: 8px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+}
+.form {
+  padding: 0 24px 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+.form input:not([type='checkbox']),
+.form select,
+.form textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #dedbea;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fff;
+  color: #292340;
+  min-height: 46px;
+  font: inherit;
+}
+.form textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+.form small {
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  color: #827a98;
+  font-size: 11px;
+}
+.wide {
+  grid-column: 1/-1;
+}
+.form fieldset {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+.form legend {
+  font-size: 13px;
+  font-weight: 600;
+  color: #383049;
+  margin-bottom: 12px;
+}
+.audience {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.audience label {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e4dfed;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #726585;
+}
+.audience input {
+  accent-color: #57279b;
+}
+.audience .selected {
+  border-color: #b997de;
+  background: #f8f3fe;
+  color: #502585;
+}
+.privacy {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  padding: 15px 17px;
+  border-radius: 12px;
+  background: #f2f8f5;
+  color: #367456;
+}
+.privacy svg {
+  flex: none;
+  margin-top: 2px;
+}
+.privacy p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+.actions > span {
+  margin-right: auto;
+  color: #756c87;
+  font-size: 12px;
+}
+.error {
+  color: #a02e43;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.history article {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 18px 0;
+  border-bottom: 1px solid #eeeaf7;
+}
+.history h3 {
+  margin: 0 0 7px;
+  font-size: 14px;
+}
+.history p {
+  font-size: 12px;
+  color: #6f6380;
+  line-height: 1.6;
+}
+.history small {
+  color: #8a8099;
+  font-size: 11px;
+}
+.receipts {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #847b94;
+  font-size: 11px;
+  margin-top: 18px;
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .heading {
+    align-items: flex-start;
+  }
+  .admin {
+    display: none;
+  }
+  .actions {
+    flex-wrap: wrap;
+  }
+  .actions > span {
+    width: 100%;
+  }
+  .audience {
+    gap: 7px;
+  }
+  .audience label {
+    padding: 12px 8px;
+    gap: 5px;
+    font-size: 11px;
+  }
+  .audience svg {
+    display: none;
+  }
+}

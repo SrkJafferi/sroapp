@@ -188,6 +188,9 @@ export async function POST(
       });
     }
     if (action === 'logout') {
+      // Revoke delivery bindings before invalidating cookies/sessions. Fail
+      // closed if active push infrastructure cannot confirm revocation.
+      await (await import('@/lib/push/server')).revokePushBeforeLogout();
       const { error } = await client.auth.signOut({ scope: 'global' });
       if (error) return json({ error: 'Sign-out could not be confirmed. Please retry.' }, 503);
       (await cookies()).delete('sro-recovery');

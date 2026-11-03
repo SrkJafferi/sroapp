@@ -1,4 +1,5 @@
 'use client';
+import { NotificationComposer } from './notification-composer';
 import { useEffect, useState } from 'react';
 import { CLINIC_TODAY as DEMO_DATE, localParts } from '@/lib/clinical-clock';
 import { useAvailability } from '@/lib/clinical-client';
@@ -1211,6 +1212,8 @@ export function Notifications({ onAppointment }: { onAppointment: (id: string) =
     (n) => n.recipientIds.includes(actor.id) && (filter === 'All' || !n.readBy.includes(actor.id)),
   );
   return (
+    <>
+    {role === 'admin' && <NotificationComposer />}
     <Panel
       title="Your clinic, in the loop"
       subtitle="Updates from your clinic and care team."
@@ -1318,5 +1321,6 @@ export function Notifications({ onAppointment }: { onAppointment: (id: string) =
         Clinic notifications refresh automatically while this workspace is open.
       </div>
     </Panel>
+    </>
   );
 }
