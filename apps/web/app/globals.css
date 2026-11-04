@@ -4202,7 +4202,7 @@ input[readonly] {
 .doctor-dashboard .dd-illustration{height:calc(100% - 8px);max-height:calc(100% - 8px);bottom:0;object-fit:contain;object-position:center bottom}
 /* Login and required-MFA presentation only. Authentication/session logic is unchanged. */
 .auth-input-wrap{display:block}
-.login-experience{position:relative;isolation:isolate;min-height:100svh;display:grid;grid-template-columns:1fr;align-items:center;justify-items:center;overflow:hidden;background:#f5f1fc;color:#1b174b;padding:48px 0}
+.login-experience{position:relative;isolation:isolate;min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;justify-items:center;overflow:hidden;background:#f5f1fc;color:#1b174b;padding:48px 0}
 .login-clinic-photo{z-index:-2;object-fit:cover;object-position:center center;pointer-events:none}
 .login-brand-story{position:absolute;top:4.1%;left:5.3%;bottom:18%;width:26%;display:flex;flex-direction:column;justify-content:space-between}
 .login-original-logo{display:block;width:285px;max-width:85%;text-decoration:none}.login-original-logo img{display:block;width:100%;height:auto}.login-original-logo>span{display:block;color:#6f6b94;font-size:12px;font-weight:600;letter-spacing:6px;text-align:center;margin-top:5px;white-space:nowrap}
