@@ -1,6 +1,23 @@
 .shell {
   --sidebar-width: 244px;
 }
+@media (max-width: 900px) {
+  .shell :global(.topbar),
+  .shell.dashboardShell :global(.topbar) {
+    height: auto;
+    min-height: 62px;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    padding-block: 10px;
+  }
+  .shell :global(.header-left) {
+    flex: 1 1 100%;
+  }
+  .shell :global(.header-controls) {
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+}
 .shell :global(.sidebar) {
   background: linear-gradient(155deg, #faf9ff, #f1edfc 65%, #f7f5ff);
   color: #372378;

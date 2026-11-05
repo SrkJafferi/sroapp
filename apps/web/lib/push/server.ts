@@ -49,7 +49,6 @@ export async function userPushCommand(
 }
 export const secretHash = (value: string) => createHash('sha256').update(value).digest('hex');
 export async function revokePushBeforeLogout() {
-  if (!pushEnabled()) return;
   const client = await sessionClient();
   const { data } = await client.auth.getUser();
   if (!data.user) return;

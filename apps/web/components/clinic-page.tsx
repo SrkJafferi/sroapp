@@ -9,6 +9,7 @@ import { AccountPanel } from './account-panel';
 import { Appointments, Dashboard } from './dashboard';
 import { Administration, Directories, DoctorProfile, Notifications, Records } from './screens';
 import { Button, Empty } from './ui';
+import { NotificationComposer } from './notification-composer';
 
 function ContentSkeleton() {
   return (
@@ -89,6 +90,7 @@ export function ClinicPage() {
         />
       );
     if (section === 'notifications') return <Notifications onAppointment={ui.openAppointment} />;
+    if (section === 'notification-management' && role === 'admin') return <NotificationComposer />;
     if (section === 'settings') return <AccountPanel />;
     return <Administration section={section} onBook={(id) => ui.openBooking({ doctorId: id })} />;
   };

@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { ClinicalError } from '@/lib/clinical-server';
 import { deviceSchema } from '@/lib/push/contracts';
+import { assertWebPushPilot } from '@/lib/push/pilot';
 import {
   assertPushEnabled,
   assertPushOrigin,
@@ -20,8 +21,13 @@ function error(e: unknown) {
 export async function GET(request: NextRequest) {
   try {
     assertPushEnabled();
-    const { client, membership } = await pushContext(request);
+    const { client, membership, identity } = await pushContext(request);
     const role = request.nextUrl.searchParams.get('role');
+    assertWebPushPilot({
+      userId: identity.id,
+      organizationId: membership.organizationId,
+      role: role ?? '',
+    });
     const input = { role, organizationId: membership.organizationId };
     const context = await userPushCommand(client, 'clinic_push_device', 'context', input);
     return reply({ context, ...input });
@@ -32,12 +38,21 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     assertPushOrigin(request);
-    assertPushEnabled();
-    const { client, membership } = await pushContext(request);
+    const { client, membership, identity } = await pushContext(request);
     const raw = await pushBody(request);
     if (!['register', 'revoke', 'preferences', 'detach'].includes(raw.action))
       throw new ClinicalError('Invalid action.');
     const { secret, scope, ...input } = deviceSchema.parse(raw);
+    // A closed/expired pilot must not strand authorized revocation or detach.
+    if (raw.action !== 'revoke' && raw.action !== 'detach') {
+      assertPushEnabled();
+      assertWebPushPilot({
+        userId: identity.id,
+        organizationId: membership.organizationId,
+        role: request.nextUrl.searchParams.get('role') ?? '',
+        installationId: input.installationId,
+      });
+    }
     const current = (await userPushCommand(client, 'clinic_push_device', 'context', {
       role: request.nextUrl.searchParams.get('role'),
       organizationId: membership.organizationId,

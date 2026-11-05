@@ -1,5 +1,4 @@
 'use client';
-import { NotificationComposer } from './notification-composer';
 import { useEffect, useState } from 'react';
 import { CLINIC_TODAY as DEMO_DATE, localParts } from '@/lib/clinical-clock';
 import { useAvailability } from '@/lib/clinical-client';
@@ -1213,7 +1212,6 @@ export function Notifications({ onAppointment }: { onAppointment: (id: string) =
   );
   return (
     <>
-    {role === 'admin' && <NotificationComposer />}
     <Panel
       title="Your clinic, in the loop"
       subtitle="Updates from your clinic and care team."

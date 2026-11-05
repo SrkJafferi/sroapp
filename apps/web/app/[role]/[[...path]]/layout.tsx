@@ -22,6 +22,7 @@ export default async function WorkspaceLayout({
 }) {
   const { role, path = [] } = await params;
   if (!['admin', 'doctor', 'patient'].includes(role) || path.length > 2) notFound();
+  if (path[0] === 'notification-management' && role !== 'admin') notFound();
   const identity = await requireWorkspace(role);
   const sidebarCollapsed = isSidebarCollapsedPreference(
     (await cookies()).get(SIDEBAR_PREFERENCE_COOKIE)?.value,

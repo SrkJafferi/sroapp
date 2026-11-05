@@ -1,6 +1,7 @@
 import {
   Activity,
   Bell,
+  BellRing,
   Building2,
   CalendarDays,
   CalendarCheck2,
@@ -69,6 +70,13 @@ export const workspaceNav: NavItem[] = [
   { key: 'reports', title: 'Medical reports', icon: FileHeart, roles: ['doctor', 'patient'] },
   { key: 'fees', title: 'Consultation fees', icon: Wallet, roles: ['admin'] },
   { key: 'activity', title: 'Activity & audit', icon: Activity, roles: ['admin'] },
+  {
+    key: 'notification-management',
+    title: 'Notification management',
+    icon: BellRing,
+    roles: ['admin'],
+    group: 'COMMUNICATIONS',
+  },
   {
     key: 'notifications',
     title: 'Notifications',
